@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "preserve",
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "*": ["./src/*"],
+      "@/*": ["./src/*"]
+    },
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true
+  },
+  "include": ["./src/**/*", "src/**/*", "src", "**/*.glb"],
+  "exclude": ["node_modules"],
+  "typeRoots": ["./typings/*", "@types", "@vite/vitejs/type.ts"]
+}
