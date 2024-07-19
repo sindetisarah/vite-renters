@@ -18,15 +18,15 @@ function App() {
       <ToastNotification />
       <Routes>
         {["/", "login"].map((path, index) => (
-          // <Route key={index} path={path} element={<Login />} />
-          <Route
-            key={index}
-            path={path}
-            element={
-              // isLogedIn ? <Navigate to="/dashboard" replace /> :
-              <Login />
-            }
-          />
+          <Route key={index} path={path} element={<Login />} />
+          // <Route
+          //   key={index}
+          //   path={path}
+          //   element={
+          //      isLogedIn ? <Navigate to="/dashboard" replace /> :
+          //     <Login />
+          //   }
+          // />
         ))}
         <Route path="/OTPVerification" element={<OTPScreen />} />
         <Route path="/register" element={<Register />} />
