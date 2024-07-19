@@ -3,6 +3,8 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import { fileURLToPath } from "url";
 import svgr from "@svgr/rollup";
+import jsconfigPaths from "vite-jsconfig-paths";
+import legacy from "@vitejs/plugin-legacy";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -12,10 +14,17 @@ export default defineConfig(({ command, mode }) => {
   // Load env file based on `mode` in the current working directory.
   // Set the third parameter to "" to load all env regardless of the `VITE_` prefix.
   const env = loadEnv(mode, process.cwd(), "");
-  const VITE_PORT = env.VITE_PORT || 3001;
+  const PORT = env.VITE_PORT || 3001;
 
   return {
-    plugins: [react(), svgr()],
+    plugins: [
+      react(),
+      jsconfigPaths(),
+      svgr(),
+      legacy({
+        targets: ["defaults", "not IE 11"],
+      }),
+    ],
 
     resolve: {
       alias: {
@@ -24,7 +33,7 @@ export default defineConfig(({ command, mode }) => {
       extensions: [".js", ".ts", ".tsx", ".jsx"],
     },
     server: {
-      port: VITE_PORT,
+      port: PORT,
       watch: {
         usePolling: true,
       },
