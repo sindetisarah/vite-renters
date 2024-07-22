@@ -33,7 +33,8 @@ function App() {
 
         {/* Protected routes */}
 
-        <Route element={<Authentication />}>
+        {/* <Route element={<Authentication />}> */}
+        <Route>
           <Route element={<Layout />}>
             {Screens.map((item, i) => (
               <Route key={i} path={item.path} element={<item.element />} />

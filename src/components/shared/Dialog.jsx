@@ -1,9 +1,10 @@
-import * as Dg from "components/ui/dialog";
-import * as At from "components/ui/alert-dialog";
+import * as Dg from "@/components/ui/dialog";
+import * as At from "@/components/ui/alert-dialog";
 import { Loader2 } from "lucide-react";
 
 export const Dialog = ({
   title,
+  description,
   triggerButton,
   content,
   open,
@@ -16,6 +17,7 @@ export const Dialog = ({
       <Dg.DialogContent className={contentClassName}>
         <Dg.DialogHeader className={` mb-3  mt-3 mr-5`}>
           <Dg.DialogTitle>{title}</Dg.DialogTitle>
+          <Dg.DialogDescription>{description}</Dg.DialogDescription>
         </Dg.DialogHeader>
         {content}
       </Dg.DialogContent>

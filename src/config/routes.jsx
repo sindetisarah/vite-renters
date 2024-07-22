@@ -11,6 +11,7 @@ const Loadable = (Component) => (props) => {
 };
 
 const Dashboard = Loadable(lazy(() => import("@/screens/Dashboard/Dashboard")));
+const Lease = Loadable(lazy(() => import("@/screens/Lease/Lease")));
 
 export const Screens = [
   {
@@ -30,7 +31,7 @@ export const Screens = [
     path: "/landlord",
   },
   {
-    element: Dashboard,
+    element: Lease,
     path: "/lease",
   },
   {
@@ -40,7 +41,8 @@ export const Screens = [
   {
     element: Dashboard,
     path: "/payments",
-  },{
+  },
+  {
     element: Dashboard,
     path: "/payments/test",
   },
